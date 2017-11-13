@@ -1,12 +1,13 @@
-<!DOCTYPE html>
-<html>
-<head>
-	<meta charset="utf-8">
-	<title></title>
-</head>
-<body>
-	{% if item.img %}
-		    <img class="card-img-top" src="{{item.img.url}}" alt="Card image cap">
+{% extends "base.html"%}
+	
+
+
+	
+{% block content %}
+
+
+	{% if item.logo %}
+		    <img class="card-img-top" src="{{item.logo.url}}" alt="Card image cap">
 	{% endif %}
 	<ul>
 		<li>{{item.name}}</li>
@@ -15,5 +16,5 @@
 		<li>{{item.closing_time}}</li>
 	</ul>
 	
-</body>
-</html> 
+{% endblock content %}
+	

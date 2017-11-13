@@ -1,10 +1,4 @@
-<!DOCTYPE html>
-<html>
-<head>
-	<meta charset="utf-8">
-	<title></title>
-</head>
-<body>
+{% block content %}
 	{% for list in items %}
 		{% if list.logo %}
 		    <img class="card-img-top" src="{{list.logo.url}}" alt="Card image cap">
@@ -31,5 +25,4 @@
             {% endif %}
         </span>
     </div>
-</body>
-</html>
+{% endblock content %}
