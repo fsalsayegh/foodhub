@@ -7,7 +7,4 @@ urlpatterns = [
     url(r'^create/$', views.restaurant_create, name='restaurant_create'),
     url(r'^update/(?P<restaurant_id>\d+)/$', views.restaurant_update, name="restaurant_update"),
     url(r'^delete/(?P<restaurant_id>\d+)/$', views.restaurant_delete, name="restaurant_delete"),
-    
-
-
 ]
