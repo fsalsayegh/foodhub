@@ -1,4 +1,12 @@
+{% extends "base.html" %}
 {% block content %}
+
+	<form action="{%url 'restaurant_list'%}" method="GET">
+		<input type="text" name="s" placeholder="Search..." value="{{request.GET.s}}" >
+		<input type="submit" value="search">
+	</form>
+
+
 	{% for list in items %}
 		{% if list.logo %}
 		    <img class="card-img-top" src="{{list.logo.url}}" alt="Card image cap">
@@ -14,14 +22,14 @@
 	<div class="pagination">
         <span class="step-links">
         	{% if items.has_previous %}
-        		<a href="?page={{ items.previous_page_number }}">previous</a>
+        		<a href="?page={{ items.previous_page_number }} &{{request.GET.s}}">previous</a>
         	{% endif %}
         <span class="current">
                 Page {{ items.number }} of {{ items.paginator.num_pages }}.
             </span>
 
             {% if items.has_next %}
-                <a href="?page={{ items.next_page_number }}">next</a>
+                <a href="?page={{ items.next_page_number }} &{{request.GET.s}}">next</a>
             {% endif %}
         </span>
     </div>

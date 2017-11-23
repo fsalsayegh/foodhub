@@ -1,20 +1,23 @@
 {% extends "base.html"%}
 	
 
-
-	
 {% block content %}
 
 
 	{% if item.logo %}
-		    <img class="card-img-top" src="{{item.logo.url}}" alt="Card image cap">
+			<img class="card-img-top" src="{{item.logo.url}}" alt="Card image cap">
 	{% endif %}
 	<ul>
-		<li>{{item.name}}</li>
-		<li>{{item.description}}</li>
-		<li>{{item.opening_time}}</li>
-		<li>{{item.closing_time}}</li>
+		<li>{{status}}</li>
+		<li>{{restaurant.name}}</li>
+		<li>{{restaurant.description}}</li>
+		<li>{{restaurant.opening_time}}</li>
+		<li>{{restaurant.closing_time}}</li>
+			
 	</ul>
+	{% for item in items %}
+		{{item}}
+	{% endfor %}
 	
 {% endblock content %}
 	

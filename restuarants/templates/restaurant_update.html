@@ -3,7 +3,7 @@
 
 
 {% block content %}
-    <form class="form-control" action="{% url 'restaurant_update' restaurant_id=instance.id %}" method="POST" enctype="multipart/form-data">
+    <form class="form-control" action="{% url 'restaurant_update' restaurant_slug=instance.slug %}" method="POST" enctype="multipart/form-data">
         {% csrf_token %}
         {{form.as_p}}
         <input class="btn btn-outline-primary" type="submit" value="Update">

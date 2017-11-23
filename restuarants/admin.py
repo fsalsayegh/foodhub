@@ -1,5 +1,5 @@
 from django.contrib import admin
-from .models import Restaurant
+from .models import Restaurant, Item
 
 class AdminFatma(admin.ModelAdmin):
 	list_display =["name"]
@@ -8,3 +8,4 @@ class AdminFatma(admin.ModelAdmin):
 		model=Restaurant
 			
 admin.site.register(Restaurant, AdminFatma)
+admin.site.register(Item)
