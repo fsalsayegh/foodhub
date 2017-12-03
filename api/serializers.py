@@ -1,0 +1,23 @@
+from rest_framework import serializers
+from restuarants.models import Restaurant
+
+class RestaurantListSerializer(serializers.ModelSerializer):
+	detail_page = serializers.HyperlinkedIdentityField(
+		view_name="restaurant_detail",
+		lookup_field="slug"
+	
+		)
+	class Meta:
+		model = Restaurant
+		fields=['name', 'logo', 'opening_time' ,'closing_time' , 'detail_page' ]
+
+class RestaurantDetailSerializer(serializers.ModelSerializer):
+	class Meta:
+		model = Restaurant
+		fields=['id', 'name', 'slug', 'description', 'logo','opening_time' ,'closing_time']
+
+
+class RestaurantCreateUpdateSerializer(serializers.ModelSerializer):
+	class Meta:
+		model = Restaurant
+		fields=[ 'name', 'description', 'logo','opening_time' ,'closing_time']

@@ -20,7 +20,8 @@ from django.conf import settings
 
 urlpatterns = [
     url(r'^admin/', admin.site.urls),
-    url(r'^home/', include('restuarants.urls'))
+    url(r'^home/', include('restuarants.urls')),
+    url(r'^api/', include('api.urls'))
 ]
 
 if settings.DEBUG:
