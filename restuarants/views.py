@@ -11,8 +11,6 @@ from django.contrib.auth import login, logout, authenticate
 
 
 
-
-
 def restaurant_list(request):
 	objects= Restaurant.objects.all()
 
