@@ -3,7 +3,7 @@ from restuarants.models import Restaurant , Item
 
 class RestaurantListSerializer(serializers.ModelSerializer):
 	detail_page = serializers.HyperlinkedIdentityField(
-		view_name="restaurant_detail",
+		view_name="restaurant_detail_json",
 		lookup_field="slug"
 	
 		)
@@ -31,7 +31,7 @@ class RestaurantCreateUpdateSerializer(serializers.ModelSerializer):
 
 class ItemListSerializer(serializers.ModelSerializer):
 	detail= serializers.HyperlinkedIdentityField(
-		view_name="item_detail",
+		view_name="item_detail_json",
 		lookup_field="slug")
 	class Meta:
 		model = Item
